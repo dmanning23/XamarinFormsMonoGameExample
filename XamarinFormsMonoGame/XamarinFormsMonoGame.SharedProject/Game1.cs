@@ -76,10 +76,6 @@ namespace XamarinFormsMonoGame
 				{
 					backPressed();
 				}
-				else
-				{
-					Exit();
-				}
 			}
 
 			// TODO: Add your update logic here

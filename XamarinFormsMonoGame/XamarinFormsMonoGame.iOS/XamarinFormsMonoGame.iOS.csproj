@@ -12,6 +12,7 @@
     <RootNamespace>XamarinFormsMonoGame.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>XamarinFormsMonoGame.iOS</AssemblyName>
+    <MonoGamePlatform>iOS</MonoGamePlatform>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
@@ -64,10 +65,16 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameViewController.cs" />
+    <Compile Include="GameViewController.designer.cs">
+      <DependentUpon>GameViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
+    <InterfaceDefinition Include="GameViewController.storyboard" />
     <None Include="Info.plist" />
+    <Compile Include="NativePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,14 +131,19 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="MonoGame.Framework.iOS">
+      <Version>3.7.1.189</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <ItemGroup>
     <ProjectReference Include="..\XamarinFormsMonoGame\XamarinFormsMonoGame.csproj">
       <Project>{0EC66027-278B-42AD-9783-B9E6CC7115B2}</Project>
       <Name>XamarinFormsMonoGame</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\XamarinFormsMonoGame.SharedProject\XamarinFormsMonoGame.SharedProject.projitems" Label="Shared" />
 </Project>

@@ -16,6 +16,5 @@ namespace XamarinFormsMonoGame.Droid
 			var intent = new Intent(CrossCurrentActivity.Current.AppContext, typeof(Activity1));
 			CrossCurrentActivity.Current.AppContext.StartActivity(intent);
 		}
-
 	}
 }
